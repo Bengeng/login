@@ -171,13 +171,13 @@ app {
 
 .il_nav {
   position: absolute;
-  left: 0;
+  left: 10;
   top: 10; }
   .il_nav a:hover {
     background-color: #f7f9fa; }
   .il_nav .logo {
     display: block;
-    width: 80px;
+    width: 70px;
     /* height: 64px; */
     padding: 25px 24px;
     line-height: 1em;
