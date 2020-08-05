@@ -6321,7 +6321,7 @@ label {
   max-width: 100%; }
 
 .form-control {
-  width: 100%;
+  width: 70%;
   height: 34px;
   padding: 8px 12px;
   font-size: 14px;
@@ -7042,4 +7042,12 @@ img.block {
     color: #333333;
     border: 1px solid #FFF;
     border-radius: 15px;
+}
+@media screen and (max-width: 479px) {
+  .form-text{
+    display: none;
+  }
+  .form-input{
+    width: 100%;
+  }
 }
