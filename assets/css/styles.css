@@ -187,7 +187,7 @@ app {
     -moz-transition: all 0.2s;
     -ms-transition: all 0.2s;
     -o-transition: all 0.2s;
-    background: transparent url(img/logo.png) center no-repeat;
+    background: transparent url(/img/logo.png) center no-repeat;
     background-size: cover; }
 
 .il_bd {
