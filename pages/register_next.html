@@ -7,7 +7,7 @@
     <meta name="description" content="鲨鱼软件">
     
     <!-- Configured Head Tags  -->
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
     
 
     <!-- base url -->
@@ -342,8 +342,7 @@
                 <img _ngcontent-c0="" src="http://pingpp-module-batch.oss-cn-hzfinance.aliyuncs.com/nova/images/5Cl9dAeHboip9psp2lcklQwcdNdcXzI1EldU12Gp.png?OSSAccessKeyId=LTAIgZqwQNeAJBDu&amp;Expires=1604568991&amp;Signature=um%2BkBQdHmAkBI4BCcbkIpwLA1lI%3D" class="ng-star-inserted">
             
         </a>
-        
-    </div>  
+    </div>
     
 </div>
 </carousel>
@@ -353,25 +352,38 @@
     <div class="il_box" style="transform: translateY(0px);">
         <div class="il_body">
             <router-outlet></router-outlet><register-step1 class="ng-star-inserted"><form novalidate="" class="ng-untouched ng-pristine ng-invalid">
-    <h4>找回密码</h4>
+    <h4>注 册</h4>
     
     <div class="form-group">
-        <label class="sr-only">请输入手机号</label>
-        <input class="form-control ng-untouched ng-pristine ng-invalid" email-input="" name="email" ngcontrol="email" placeholder="请输入手机号" required="">
+        <label class="sr-only">用户名:</label>
+        <label style="font-weight:normal;margin-right:10px;width:20%;   text-align: left;">用户名:</label>
+        <input style="width: 70%;" class="form-control ng-untouched ng-pristine ng-invalid" email-input="" name="email" ngcontrol="email" placeholder="请输入用户名" required="">
+        <!-- <label>6-20位，中文、字母、数字、下划线的组合，以中文或字母开头</label> -->
     </div>
     <div class="form-group">
-        <label class="sr-only">请输入验证码</label>
-        <input style="width: 60%;" class="form-control ng-untouched ng-pristine ng-invalid" email-input="" name="email" ngcontrol="email" placeholder="请输入验证码" required="">
-        <label class="verification-code">获取验证码</label>
+        <label class="sr-only">QQ号:</label>
+        <label style="font-weight:normal;margin-right:10px;width:20%;   text-align: left;">QQ号:</label>
+        <input style="width: 70%;" class="form-control ng-untouched ng-pristine ng-invalid" email-input="" name="email" ngcontrol="email" placeholder="请输入QQ号" required="">
     </div>
-    <!----><button class="btn btnBlue btn-block ng-star-inserted">
+    <div class="form-group">
+        <label class="sr-only">密码:</label>
+        <label style="font-weight:normal;margin-right:10px;width:20%;   text-align: left;">密码:</label>
+        <input style="width: 70%;" class="form-control ng-untouched ng-pristine ng-invalid" email-input="" name="email" ngcontrol="email" placeholder="请输入密码" required="">
+    </div>
+    <div class="form-group">
+        <label class="sr-only">确认密码:</label>
+        <label style="font-weight:normal;margin-right:10px;width:20%;   text-align: left;">确认密码:</label>
+        <input style="width: 70%;" class="form-control ng-untouched ng-pristine ng-invalid" email-input="" name="email" ngcontrol="email" placeholder="请确认密码" required="">
+    </div>
+    
+    <!----><button class="btn btnBlue btn-block ng-star-inserted" type="submit" disabled="">
 
-    <!----><a  style="color: #FFF" class="ng-star-inserted" href="reset_password_next.html">下一步</a>
+    <!----><span class="ng-star-inserted">提交注册</span>
     </button>
     
     <div class="tologin text-center">
-        想起密码？
-        <a class="text-blue" target="_self" href="login.html">点此登录</a>
+        已有账号？
+        <a class="text-blue" target="_self" href="./login.html">点此登录</a>
     </div>
 </form>
 </register-step1>
@@ -386,5 +398,4 @@
 <pxx-alert _nghost-c1="" class="ng-tns-c1-0"><!---->
 </pxx-alert>
 </app>
-
-</body></html>
+<body></html>

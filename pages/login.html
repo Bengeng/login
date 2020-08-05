@@ -7,11 +7,11 @@
     <meta name="description" content="鲨鱼软件">
     
     <!-- Configured Head Tags  -->
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
     
 
     <!-- base url -->
-    <base href="/">
+    <base href="/login">
 
     <style type="text/css">
             .agl-hover {
@@ -65,7 +65,8 @@
                 outline: 3px solid rgba(255,165,0,0.99) !important;
                 background-color: rgba(255,165,0,0.4) !important;
             }
-        </style><script src="https://g.alicdn.com/AWSC/uab/1.125.3/collina.js" id="AWSC_uabModule"></script><script src="https://g.alicdn.com/AWSC/WebUMID/1.82.0/um.js" id="AWSC_umidPCModule"></script><script src="//g.alicdn.com/sd/nvc/1.1.154/nvc.js"></script><script src="//cf.aliyun.com/nvc/nvcPrepare.jsonp?a=%7B%22a%22%3A%22FFFF0N00000000006E89%22%2C%22d%22%3A%22ic_register%22%2C%22c%22%3A%221596268429590%3A0.5996584773598883%22%7D&amp;callback=jsonp_045471894319497785"></script><script src="https://hm.baidu.com/hm.js?ecd1b12c3c38c866f91169494895319a"></script><script src="https://hm.baidu.com/hm.js?683f87a118eee118bc5bbd1d65402ab2"></script><script type="text/javascript" async="" src="https://fxgate.baidu.com/angelia/fcagl.js?production=_f7L2XwGXjyszb4d1e2oxPybgD"></script><script>
+        </style>
+        <script src="https://g.alicdn.com/AWSC/uab/1.125.3/collina.js" id="AWSC_uabModule"></script><script src="https://g.alicdn.com/AWSC/WebUMID/1.82.0/um.js" id="AWSC_umidPCModule"></script><script src="//g.alicdn.com/sd/nvc/1.1.154/nvc.js"></script><script src="//cf.aliyun.com/nvc/nvcPrepare.jsonp?a=%7B%22a%22%3A%22FFFF0N00000000006E89%22%2C%22d%22%3A%22ic_register%22%2C%22c%22%3A%221596268429590%3A0.5996584773598883%22%7D&amp;callback=jsonp_045471894319497785"></script><script src="https://hm.baidu.com/hm.js?ecd1b12c3c38c866f91169494895319a"></script><script src="https://hm.baidu.com/hm.js?683f87a118eee118bc5bbd1d65402ab2"></script><script type="text/javascript" async="" src="https://fxgate.baidu.com/angelia/fcagl.js?production=_f7L2XwGXjyszb4d1e2oxPybgD"></script><script>
         window._agl = window._agl || [];
         (function () {
             _agl.push(
@@ -367,45 +368,44 @@
 </carousel>
         </div>
         <div class="il_container_right">
-            <router-outlet></router-outlet><reset-password-email class="ng-star-inserted"><div class="il_wrap">
-    <div class="il_box">
-        
-        <!----><div class="il_body ng-star-inserted">
-            <form novalidate="" class="ng-untouched ng-pristine ng-invalid">
-                <h4>找回密码</h4>
-                <div class="form-group">
-                    <label class="sr-only">用户名:</label>
-                    <label style="font-weight:normal;margin-right:10px;width:25%;   text-align: right;">用户名:</label>
-                    <label style="font-weight:normal;margin-right:10px;text-align: left;">wangwei</label>
+            <router-outlet></router-outlet><login class="ng-star-inserted"><div class="il_wrap">
+
+    <div class="il_box login_box">
+        <!----><!---->
+            <form novalidate="" class="ng-pristine ng-star-inserted ng-invalid ng-touched">
+                <div class="il_body">
+                    <!----><h4 class="ng-star-inserted">登 录</h4>
+
+                        <div class="form-group ng-star-inserted">
+                            <input autofocus="autofocus" class="form-control ng-touched ng-pristine ng-invalid" email-input="" formcontrolname="email" name="username" required="" type="email" placeholder="请输入手机号">
+                        </div>
+                        
+                        <div class="form-group ng-star-inserted">
+                            <input class="form-control ng-untouched ng-pristine ng-invalid" formcontrolname="password" id="password" password-input-login="" required="" type="password" placeholder="请输入密码">
+                        </div>
+                    
                 </div>
-                <div class="form-group">
-                    <label class="sr-only">新密码:</label>
-                    <label style="font-weight:normal;margin-right:10px;width:25%;   text-align: right;">新密码:</label>
-                    <input style="width: 70%;" class="form-control ng-untouched ng-pristine ng-invalid" email-phone-input="" name="email" placeholder="输入新密码" required="" type="text">
-                </div>
-                <div class="form-group">
-                    <label class="sr-only">确认新密码:</label>
-                    <label style="font-weight:normal;margin-right:10px;width:25%;text-align: right;">确认新密码:</label>
-                    <input style="width: 70%;" class="form-control ng-untouched ng-pristine ng-invalid" email-phone-input="" name="email" placeholder="确认新密码" required="" type="text">
+                <!----><div class="il_btn clearfix ng-star-inserted">
+                    <!----><button class="btn btnBlue btn-block ng-star-inserted" name="action" type="submit" disabled="">登 录
+                    </button>
+                    <!---->
+                    
+                    <a class="retrieve" href="./reset_password.html">
+                        忘记密码
+                    </a>
+                    
+                    <a class="reg" href="./register.html">注册账户</a>
                 </div>
 
-                <!---->
-
-                <!----><button class="btn btnBlue btn-block ng-star-inserted" type="submit" disabled="">
-                    <span>确认</span>
-                </button>
-                <div class="tologin text-center">
-                    想起密码？
-                    <a class="text-blue" target="_self" href="login.html">点此登录</a>
-                </div>
+                
                 <!---->
             </form>
-        </div>
         
+
         <!---->
     </div>
 </div>
-</reset-password-email>
+</login>
         </div>
     </div>
 </div>
