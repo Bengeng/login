@@ -393,7 +393,7 @@
     </div> -->
     <!----><button class="btn btnBlue btn-block ng-star-inserted">
 
-    <!----><a  style="color: #FFF; display: block; width:100%;" class="ng-star-inserted" href="javacript:void(0);">提交注册</a>
+    <!----><a  style="color: #FFF; display: block; width:100%;" class="ng-star-inserted" href="javacript:void(0);" onclick="Register();">提交注册</a>
     </button>
 
     
@@ -414,12 +414,12 @@
 <pxx-alert _nghost-c1="" class="ng-tns-c1-0"><!---->
 </pxx-alert>
 </app>
-<script type="text/javascript" src="static/login/js/jquery.js"></script>
-<script type="text/javascript" src="static/login/js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="static/login/js/register.js"></script>
-<script type="text/javascript" src="static/login/js/lib.js"></script>
-<script type="text/javascript" src="static/login/js/flexslider.js"></script>
-<script type="text/javascript" src="static/login/js/banner.js"></script>
+<script type="text/javascript" src="../static/login/js/jquery.js"></script>
+<script type="text/javascript" src="../static/login/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../static/login/js/register.js"></script>
+<script type="text/javascript" src="../static/login/js/lib.js"></script>
+<script type="text/javascript" src="../static/login/js/flexslider.js"></script>
+<script type="text/javascript" src="../static/login/js/banner.js"></script>
 <script>
     $('.ul-news-i li').hover(function () {
         $(this).toggleClass('on');
@@ -523,5 +523,28 @@
             });
         }
     }
+    var os = function() {
+        var ua = navigator.userAgent,
+        isWindowsPhone = /(?:Windows Phone)/.test(ua),
+        isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone, 
+        isAndroid = /(?:Android)/.test(ua), 
+        isFireFox = /(?:Firefox)/.test(ua), 
+        isChrome = /(?:Chrome|CriOS)/.test(ua),
+        isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+        isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+        isPc = !isPhone && !isAndroid && !isSymbian;
+        return {
+            isTablet: isTablet,
+            isPhone: isPhone,
+            isAndroid : isAndroid,
+            isPc : isPc
+        };
+    }();
+    if(os.isAndroid || os.isPhone){
+    }
+    if(os.isPc){
+        $("input").attr("placeholder", " ");
+    }
+    
 </script>
 </body></html>
