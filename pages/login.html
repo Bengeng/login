@@ -368,7 +368,7 @@
                     <p class="form_item" style="position: relative;">
                         <label class="c_password_icon" for="password"></label>
                         <input type="text" name="Verify" id="Verify" placeholder="验证码">
-                        <img style="position: absolute;top:1px ;left:64%;" class="vertimg" id="verifyImg" src="/login/getcode" title="看不清，点击更换图片" onclick="javascript:this.src='/login/getcode?code='+ Math.random()">
+                        <img style="position: absolute;top:1px ;left:64%;" class="vertimg" id="verifyImg" src="../login/getcode.jpeg" title="看不清，点击更换图片" onclick="javascript:this.src='../login/getcode.jpeg?code='+ Math.random()">
                     </p>
                     
                 </div>
@@ -383,13 +383,7 @@
                     
                     <a class="reg" href="../pages/register.html">注册账户</a>
                 </div>
-
-                
-                <!---->
             </form>
-        
-
-        <!---->
     </div>
 </div>
 </login>
@@ -401,4 +395,87 @@
 </pxx-alert>
 </app>
 
+<script type="text/javascript" src="static/login/js/jquery.js"></script>
+<script type="text/javascript" src="static/login/js/lib.js"></script>
+<script type="text/javascript" src="static/login/js/flexslider.js"></script>
+<script type="text/javascript" src="static/login/js/banner.js"></script>
+<script>
+    $('.ul-news-i li').hover(function () {
+        $(this).toggleClass('on');
+    })
+    $('.ul-icon-i li').hover(function () {
+        $(this).find('img:first').fadeIn(100);
+        $(this).find('.pic-icon').animate({ top: 0 });
+    }, function () {
+        $(this).find('.pic-icon').animate({ top: -134 });
+        $(this).find('img:first').fadeOut(100);
+    })
+
+    $('.case-img').hover(function () {
+        $(this).toggleClass('on');
+    })
+
+    $('.map .btn').click(function () {
+        $('.map-pop').show();
+        $(this).parents('.map').addClass('map-big-i');
+        var winW = $(window).width();
+        var winH = $(window).height();
+        console.log(winH);
+        if (winW < 768) {
+            $('.map-pop').height($(window).height() - 50 - 80);
+            $('.map-big-i').height($(window).height() - 50 - 80);
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+        } else {
+
+            $('.map-pop').height($(window).height() - 344);
+            $('.map-big-i').height($(window).height() - 344);
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+        }
+        initMap();
+    })
+    $('.map .btn-down').click(function () {
+        $('.map-pop').hide();
+        $(this).parents('.map').removeClass('map-big-i');
+        $('.map').height('107');
+    })
+
+</script>
+<script type="text/javascript" src="../static/login/js/ditu.js"></script>
+<script type="text/javascript" src="../static/login/js/map.js"></script>
+
+<script>
+    function submitFormVerify() {
+        var username = $("#UserName").val();
+        if (username == '') {
+            alert('请输入您的用户名');
+            return false;
+        }
+        var password = $("#Password").val();
+        if (password == '') {
+            alert('请输入您的密码');
+            return false;
+        }
+        var verify = $("#Verify").val();
+        if (verify == '') {
+            alert('请输入验证码');
+            return false;
+        }
+        return true;
+    }
+
+    function Login() {
+        if (submitFormVerify()) {
+            $.post('/login/Login', $("#login").serialize(), function (data) {
+                if (data != '') {
+                    alert(data);
+                    document.getElementById("verifyImg").click();
+                }
+                else {
+                    window.location.href = '/page/index';
+                }
+            });
+
+        }
+    }
+</script>
 </body></html>

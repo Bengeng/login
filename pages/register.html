@@ -352,7 +352,8 @@
         <div class="f-fl item-ifo">
             <input type="password" id="RegPassword" placeholder="请输入密码" name="Password" maxlength="20" class="txt03 f-r3 required" tabindex="3" style="ime-mode:disabled;" onpaste="return  false" autocomplete="off" data-valid="isNonEmpty||between:6-20||level:2" data-error="密码不能为空||密码长度6-20位||该密码太简单，有被盗风险，建议字母+数字的组合">
              <span class="showpwd" data-eye="password"></span>
-            <label class="focus">6-20位英文（区分大小写）、数字、字符的组合</label>
+             <div class="focus"> <span>6-20位英文（区分大小写）、数字、字符的组合</span> </div>
+            <!-- <label class="focus">6-20位英文（区分大小写）、数字、字符的组合</label> -->
             <label class="focus valid"></label>
         </div>
     </div>
@@ -361,7 +362,7 @@
         <div class="f-fl item-ifo">
             <input type="password" maxlength="20" placeholder="请确认密码" class="txt03 f-r3 required" tabindex="4" style="ime-mode:disabled;" onpaste="return  false" autocomplete="off" data-valid="isNonEmpty||between:6-16||isRepeat:RegPassword" data-error="确认密码不能为空||密码长度6-20位||两次密码输入不一致" id="ConfirmPassword" name="ConfirmPassword">
             <span class="showpwd" data-eye="rePassword"></span>
-            <label class="focus">请再输入一遍上面的密码</label>
+            <label class="focus only-small-hide">请再输入一遍上面的密码</label>
             <label class="focus valid"></label>
         </div>
     </div>
@@ -369,7 +370,7 @@
         <span class="intelligent-label f-fl"><b class="ftx04">*</b>QQ：</span>
         <div class="f-fl item-ifo">
             <input type="text" id="QQ" name="QQ" placeholder="请输入QQ号" class="txt03 f-r3 required" style="ime-mode:disabled;" onpaste="return false" autocomplete="off" data-valid="isNonEmpty" data-error="QQ不能为空">
-            <label class="focus">请输入QQ</label>
+            <label class="focus only-small-hide">请输入QQ</label>
             <label class="focus valid"></label>
         </div>
     </div>
@@ -377,8 +378,8 @@
         <span class="intelligent-label f-fl"><b class="ftx04">*</b>验证码：</span>
         <div class="f-fl item-ifo" id="verifydiv">
             <input type="text" maxlength="8" placeholder="请输入验证码"  class="txt03 f-r3 f-fl required" tabindex="4" style="width:167px" id="verifyImg" name="verify">
-            <label class="f-size12 c-999 f-fl f-pl10"> <img src="/login/getcode" id="vercode" onclick="javascript:this.src='/login/getcode?code='+ Math.random()"></label>
-            <label class="focusa" id="focusadiv">看不清,请点击图片重新生成</label>
+            <label class="f-size12 c-999 f-fl f-pl10"><img src="../login/getcode.jpeg" id="vercode" onclick="javascript:this.src='../login/getcode.jpeg?code='+ Math.random()"></label>
+            <!-- <label class="focusa" id="focusadiv">看不清,请点击图片重新生成</label> -->
             <label class="focus valid" style="left:500px"></label>
         </div>
     </div>
@@ -413,5 +414,114 @@
 <pxx-alert _nghost-c1="" class="ng-tns-c1-0"><!---->
 </pxx-alert>
 </app>
+<script type="text/javascript" src="static/login/js/jquery.js"></script>
+<script type="text/javascript" src="static/login/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="static/login/js/register.js"></script>
+<script type="text/javascript" src="static/login/js/lib.js"></script>
+<script type="text/javascript" src="static/login/js/flexslider.js"></script>
+<script type="text/javascript" src="static/login/js/banner.js"></script>
+<script>
+    $('.ul-news-i li').hover(function () {
+        $(this).toggleClass('on');
+    })
+    $('.ul-icon-i li').hover(function () {
+        $(this).find('img:first').fadeIn(100);
+        $(this).find('.pic-icon').animate({ top: 0 });
+    }, function () {
+        $(this).find('.pic-icon').animate({ top: -134 });
+        $(this).find('img:first').fadeOut(100);
+    })
 
+    $('.case-img').hover(function () {
+        $(this).toggleClass('on');
+    })
+
+    $('.map .btn').click(function () {
+        $('.map-pop').show();
+        $(this).parents('.map').addClass('map-big-i');
+        var winW = $(window).width();
+        var winH = $(window).height();
+        console.log(winH);
+        if (winW < 768) {
+            $('.map-pop').height($(window).height() - 50 - 80);
+            $('.map-big-i').height($(window).height() - 50 - 80);
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+        } else {
+
+            $('.map-pop').height($(window).height() - 344);
+            $('.map-big-i').height($(window).height() - 344);
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+        }
+        initMap();
+    })
+    $('.map .btn-down').click(function () {
+        $('.map-pop').hide();
+        $(this).parents('.map').removeClass('map-big-i');
+        $('.map').height('107');
+    })
+
+</script>
+<script type="text/javascript" src="static/login/js/ditu.js"></script>
+<script type="text/javascript" src="static/login/js/map.js"></script>
+
+<script>
+    function submitFormVerifyReg() {
+        var username = $("#RegUserName").val();
+        if (username == '') {
+            alert('请输入您的用户名');
+            return false;
+        }
+        if (username.length < 6 || username.length > 20) {
+            alert('用户名由6-20个字符组成');
+            return false;
+        }
+        var password = $("#RegPassword").val();
+        var passwordConfirm = $("#ConfirmPassword").val();
+        if (password == '') {
+            alert('请输入您的密码');
+            return false;
+        }
+        if (password.length < 6 || password.length > 20) {
+            alert('登录密码由6-20个字符组成');
+            return false;
+        }
+        if (passwordConfirm == '') {
+            alert('请输入确认密码');
+            return false;
+        }
+        if (password != passwordConfirm) {
+            alert('两次输入密码不一致');
+            return false;
+        }
+
+        var QQ = $('#QQ').val();
+        var emailPattern = /^([0-9]{5,10})+$/;
+        if (!emailPattern.test(QQ)) {
+            alert('请输入正确的QQ');
+            return false;
+        }
+        var verify = $("#RegVerify").val();
+        if (verify == '') {
+            alert('请输入验证码');
+            return false;
+        }
+        return true;
+    }
+
+    function Register() {
+        if (submitFormVerifyReg()) {
+            $.post('/Register/Register', $("#Register").serialize(), function (data) {
+                if (data.code == 1) {
+                    alert(data.msg);
+                    window.location.href = '/home/login';
+                }
+                else {
+                    alert(data.msg);
+                    document.getElementById("vercode").click();
+                }
+
+            });
+        }
+    }
+</script>
 </body></html>
