@@ -195,8 +195,8 @@ app {
   display: flex;
   align-items: center; }
   .il_bd .il_container {
-    width: 960px;
-    height: 488px;
+    width: 1010px;
+    height: 528px;
     margin: 0 auto;
     background-color: white;
     display: flex;
@@ -209,8 +209,8 @@ app {
       flex-shrink: 0;
       height: 100%; }
     .il_bd .il_container .il_container_right {
-      padding-top: 30px;
-      flex-basis: 560px;
+      padding-top: 15px;
+      flex-basis: 660px;
       flex-grow: 0;
       flex-shrink: 0;
       height: 100%;
@@ -218,30 +218,34 @@ app {
 
 .il_wrap {
   display: flex;
-  overflow-y: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
   height: 100%; }
   .il_wrap .il_box {
     display: flex;
     justify-content: center;
-    margin: 0 auto; }
+    /* margin: 0 auto; */
+    margin-left: 50px;
+   }
     .il_wrap .il_box.login_box {
       padding: 0 10px; }
   .il_wrap .il_body {
-    width: 308px; }
+    width: 408px; }
     .il_wrap .il_body h4 {
       font-size: 21px;
       text-align: center;
       font-weight: normal;
-      margin-bottom: 40px; }
+      margin-bottom: 10px; }
     .il_wrap .il_body .form-group {
       margin-bottom: 20px; }
     .il_wrap .il_body .checkboxFormGroup {
       margin-bottom: 16px; }
     .il_wrap .il_body .tologin {
-      margin-top: 48px;
-      padding: 32px 0;
+      margin-top: 18px;
+      padding: 8px 0;
       font-size: 14px;
-      border-top: 1px solid #edf0f2; }
+      /* border-top: 1px solid #edf0f2;  */
+    }
     .il_wrap .il_body .resend-txt {
       margin-top: 10px;
       font-size: 12px; }
@@ -1318,6 +1322,7 @@ input.error, textarea.error {
 
 .btn-block {
   display: block;
+  margin-top: 30px;
   width: 100%; }
 
 .btn-block + .btn-block {
@@ -1326,7 +1331,7 @@ input.error, textarea.error {
 input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
-  width: 100%; }
+  width: 80%; }
 
 .btn2line {
   line-height: 1.5;
@@ -6728,7 +6733,8 @@ textarea.form-control {
   content: "\e208"; }
 
 .icon-close:before {
-  content: "\e209"; }
+  /* content: "\e209";  */
+}
 
 .icon-expand_less:before {
   content: "\e20a"; }
@@ -7049,5 +7055,22 @@ img.block {
   }
   .form-input{
     width: 100%;
+  }
+  .btn-block{
+    display: block;
+    margin-top: 30px;
+    width: 65%;
+  }
+  .only-small-loginbtn{
+    width: 100%;
+  }
+  /* .text-center{
+    width: 60%;
+  } */
+  .il_wrap .il_body .tologin{
+    width: 60%;
+  }
+  .il_wrap .il_box{
+    margin-left: 41px;
   }
 }
